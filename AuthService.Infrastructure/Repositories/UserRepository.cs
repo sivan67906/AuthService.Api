@@ -1,0 +1,27 @@
+using System;
+using System.Threading.Tasks;
+using AuthService.Domain.Entities;
+using AuthService.Domain.Interfaces;
+using Microsoft.AspNetCore.Identity;
+
+namespace AuthService.Infrastructure.Repositories;
+
+public class UserRepository : IUserRepository
+{
+    private readonly UserManager<ApplicationUser> _userManager;
+
+    public UserRepository(UserManager<ApplicationUser> userManager)
+    {
+        _userManager = userManager;
+    }
+
+    public Task<ApplicationUser?> FindByEmailAsync(string email)
+    {
+        return _userManager.FindByEmailAsync(email)!;
+    }
+
+    public Task<ApplicationUser?> FindByIdAsync(Guid id)
+    {
+        return _userManager.FindByIdAsync(id.ToString())!;
+    }
+}
