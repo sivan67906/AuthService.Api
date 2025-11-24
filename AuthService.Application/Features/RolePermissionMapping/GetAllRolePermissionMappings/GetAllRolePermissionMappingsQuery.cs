@@ -1,0 +1,5 @@
+using AuthService.Application.Features.RolePermissionMapping.CreateRolePermissionMapping;
+
+namespace AuthService.Application.Features.RolePermissionMapping.GetAllRolePermissionMappings;
+
+public sealed record GetAllRolePermissionMappingsQuery : IRequest<List<RolePermissionMappingDto>>;

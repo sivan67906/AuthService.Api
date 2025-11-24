@@ -1,0 +1,5 @@
+using AuthService.Application.Features.PagePermissionMapping.CreatePagePermissionMapping;
+
+namespace AuthService.Application.Features.PagePermissionMapping.GetAllPagePermissionMappings;
+
+public sealed record GetAllPagePermissionMappingsQuery : IRequest<List<PagePermissionMappingDto>>;
