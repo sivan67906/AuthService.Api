@@ -22,8 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Persistence\Data\Migrations\" />
-    <Folder Include="Persistence\Data\Migrations\Command\" />
-    <Folder Include="Persistence\Data\Migrations\Query\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="EmailTemplates\*.html">

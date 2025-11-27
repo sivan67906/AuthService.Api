@@ -134,6 +134,18 @@ public static class ComprehensiveSeedData
             NormalizedName = "SUPERADMIN"
         });
 
+        // PendingUser - no department
+        var pendingUserId = Guid.NewGuid();
+        roles["PendingUser"] = pendingUserId;
+        await roleManager.CreateAsync(new ApplicationRole
+        {
+            Id = pendingUserId,
+            Name = "PendingUser",
+            Description = "PendingUser access",
+            DepartmentId = null,
+            NormalizedName = "PENDINGUSER"
+        });
+
         // Finance Department Roles
         var financeRoles = new List<(string Name, string Description, Guid DeptId)>
         {
